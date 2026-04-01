@@ -28,20 +28,24 @@ st.markdown(
     /* Global */
     html, body, [class*="css"] {
         font-family: 'Syne', sans-serif;
-        background-color: #0a0a0f;
-        color: #e8e4dc;
+        background-color: #f5f7ff;
+        color: #1a1a2e;
     }
-    .stApp { background-color: #0a0a0f; }
+    .stApp { background-color: #f5f7ff; }
 
     /* Sidebar */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #10101a 0%, #0d0d18 100%);
-        border-right: 1px solid #2a2a3a;
+        background: linear-gradient(180deg, #ffffff 0%, #eef1ff 100%);
+        border-right: 1px solid #dde2f5;
     }
     [data-testid="stSidebar"] .stMarkdown h1,
     [data-testid="stSidebar"] .stMarkdown h2,
     [data-testid="stSidebar"] .stMarkdown h3 {
-        color: #a78bfa;
+        color: #4f46e5;
+    }
+    [data-testid="stSidebar"] label,
+    [data-testid="stSidebar"] .stMarkdown p {
+        color: #374151 !important;
     }
 
     /* Title / brand */
@@ -54,7 +58,7 @@ st.markdown(
         font-weight: 800;
         font-size: 2.6rem;
         letter-spacing: -1px;
-        background: linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #34d399 100%);
+        background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #0ea5e9 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -62,7 +66,7 @@ st.markdown(
     .brand-header .tagline {
         font-family: 'Space Mono', monospace;
         font-size: 0.7rem;
-        color: #4a4a6a;
+        color: #9ca3af;
         letter-spacing: 3px;
         text-transform: uppercase;
         margin-top: 0.3rem;
@@ -70,14 +74,15 @@ st.markdown(
 
     /* Cards */
     .card {
-        background: #13131f;
-        border: 1px solid #1e1e2e;
+        background: #ffffff;
+        border: 1px solid #e5e9f7;
         border-radius: 12px;
         padding: 1.4rem 1.6rem;
         margin-bottom: 1rem;
+        box-shadow: 0 1px 6px rgba(79,70,229,0.06);
     }
     .card-accent {
-        border-left: 3px solid #a78bfa;
+        border-left: 3px solid #4f46e5;
     }
 
     /* Source badge */
@@ -92,50 +97,51 @@ st.markdown(
         font-weight: 700;
         margin-right: 6px;
     }
-    .badge-doc    { background: #1a2a1a; color: #34d399; border: 1px solid #34d39933; }
-    .badge-web    { background: #1a1a2e; color: #60a5fa; border: 1px solid #60a5fa33; }
-    .badge-arxiv  { background: #2a1a1a; color: #f97316; border: 1px solid #f9731633; }
-    .badge-wiki   { background: #1a2a2a; color: #22d3ee; border: 1px solid #22d3ee33; }
-    .badge-llm    { background: #2a1a2a; color: #e879f9; border: 1px solid #e879f933; }
+    .badge-doc    { background: #ecfdf5; color: #059669; border: 1px solid #6ee7b7; }
+    .badge-web    { background: #eff6ff; color: #2563eb; border: 1px solid #93c5fd; }
+    .badge-arxiv  { background: #fff7ed; color: #ea580c; border: 1px solid #fdba74; }
+    .badge-wiki   { background: #ecfeff; color: #0891b2; border: 1px solid #67e8f9; }
+    .badge-llm    { background: #faf5ff; color: #7c3aed; border: 1px solid #c4b5fd; }
 
     /* Answer box */
     .answer-box {
-        background: #13131f;
-        border: 1px solid #2a2a3a;
+        background: #ffffff;
+        border: 1px solid #e5e9f7;
         border-radius: 12px;
         padding: 1.6rem 2rem;
         line-height: 1.8;
         font-size: 0.97rem;
-        color: #ddd8cc;
+        color: #1f2937;
+        box-shadow: 0 2px 12px rgba(79,70,229,0.07);
     }
 
     /* Step trace */
     .step-trace {
         font-family: 'Space Mono', monospace;
         font-size: 0.72rem;
-        color: #4a4a6a;
-        border-left: 2px solid #2a2a3a;
+        color: #9ca3af;
+        border-left: 2px solid #e5e9f7;
         padding-left: 12px;
         margin: 6px 0;
     }
-    .step-active { color: #a78bfa; border-color: #a78bfa; }
+    .step-active { color: #4f46e5; border-color: #4f46e5; }
 
     /* Input styling */
     .stTextArea textarea, .stTextInput input {
-        background: #13131f !important;
-        border: 1px solid #2a2a3a !important;
+        background: #ffffff !important;
+        border: 1px solid #dde2f5 !important;
         border-radius: 8px !important;
-        color: #e8e4dc !important;
+        color: #1a1a2e !important;
         font-family: 'Syne', sans-serif !important;
     }
     .stTextArea textarea:focus, .stTextInput input:focus {
-        border-color: #a78bfa !important;
-        box-shadow: 0 0 0 2px #a78bfa22 !important;
+        border-color: #4f46e5 !important;
+        box-shadow: 0 0 0 3px rgba(79,70,229,0.12) !important;
     }
 
     /* Button */
     .stButton > button {
-        background: linear-gradient(135deg, #7c3aed, #4f46e5) !important;
+        background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
         color: white !important;
         border: none !important;
         border-radius: 8px !important;
@@ -143,27 +149,43 @@ st.markdown(
         font-weight: 700 !important;
         letter-spacing: 0.5px !important;
         padding: 0.55rem 1.8rem !important;
-        transition: opacity 0.2s !important;
+        transition: opacity 0.2s, box-shadow 0.2s !important;
+        box-shadow: 0 2px 8px rgba(79,70,229,0.25) !important;
     }
-    .stButton > button:hover { opacity: 0.85 !important; }
+    .stButton > button:hover {
+        opacity: 0.88 !important;
+        box-shadow: 0 4px 16px rgba(79,70,229,0.35) !important;
+    }
 
     /* File uploader */
     [data-testid="stFileUploader"] {
-        border: 1px dashed #2a2a3a;
+        border: 1px dashed #c7d0f0;
         border-radius: 10px;
         padding: 0.5rem;
+        background: #fafbff;
     }
 
     /* Divider */
-    hr { border-color: #1e1e2e !important; }
+    hr { border-color: #e5e9f7 !important; }
 
     /* Metric */
     [data-testid="stMetric"] {
-        background: #13131f;
-        border: 1px solid #1e1e2e;
+        background: #ffffff;
+        border: 1px solid #e5e9f7;
         border-radius: 10px;
         padding: 0.8rem;
+        box-shadow: 0 1px 4px rgba(79,70,229,0.06);
     }
+    [data-testid="stMetricLabel"] { color: #6b7280 !important; }
+    [data-testid="stMetricValue"] { color: #1a1a2e !important; }
+
+    /* Labels & general text */
+    .stSelectbox label, .stFileUploader label,
+    .stTextArea label, .stTextInput label {
+        color: #374151 !important;
+        font-weight: 600 !important;
+    }
+    p, span, li { color: #1f2937; }
     </style>
     """,
     unsafe_allow_html=True,
@@ -341,12 +363,26 @@ def call_openrouter(
         "Content-Type":  "application/json",
         "HTTP-Referer":  "https://agentic-rag.streamlit.app",
     }
-    body = {
-        "model": model,
-        "messages": [
+
+    # Gemma models (Google AI Studio) do NOT support the "system" role.
+    # Merge system prompt into the user turn instead.
+    NO_SYSTEM_ROLE_MODELS = ("gemma",)
+    if any(kw in model.lower() for kw in NO_SYSTEM_ROLE_MODELS):
+        messages = [
+            {
+                "role": "user",
+                "content": f"{system_prompt}\n\n{user_prompt}",
+            }
+        ]
+    else:
+        messages = [
             {"role": "system", "content": system_prompt},
             {"role": "user",   "content": user_prompt},
-        ],
+        ]
+
+    body = {
+        "model": model,
+        "messages": messages,
         "max_tokens": 1024,
         "temperature": 0.3,
     }
@@ -559,7 +595,7 @@ with st.sidebar:
     st.markdown("---")
     st.markdown(
         """
-        <div style='font-family:Space Mono,monospace;font-size:0.62rem;color:#3a3a5a;line-height:1.8'>
+        <div style='font-family:Space Mono,monospace;font-size:0.62rem;color:#9ca3af;line-height:1.8'>
         PIPELINE<br>
         1 → Document (if uploaded)<br>
         2 → arXiv (research Qs)<br>
@@ -588,12 +624,12 @@ with col_right:
     st.markdown(
         """
         <div class="card" style="margin-top:0.2rem">
-        <span style="font-family:Space Mono,monospace;font-size:0.68rem;color:#4a4a6a;letter-spacing:2px">ROUTING LOGIC</span><br><br>
-        <span style="font-size:0.82rem;color:#a78bfa">📄 Doc</span> → keyword overlap + LLM check<br>
-        <span style="font-size:0.82rem;color:#f97316">🔬 arXiv</span> → research keyword match<br>
-        <span style="font-size:0.82rem;color:#60a5fa">🌐 Web</span> → Tavily real-time search<br>
-        <span style="font-size:0.82rem;color:#22d3ee">📖 Wiki</span> → encyclopedic fallback<br>
-        <span style="font-size:0.82rem;color:#e879f9">🧠 LLM</span> → model knowledge last
+        <span style="font-family:Space Mono,monospace;font-size:0.68rem;color:#9ca3af;letter-spacing:2px">ROUTING LOGIC</span><br><br>
+        <span style="font-size:0.82rem;color:#059669">📄 Doc</span> → keyword overlap + LLM check<br>
+        <span style="font-size:0.82rem;color:#ea580c">🔬 arXiv</span> → research keyword match<br>
+        <span style="font-size:0.82rem;color:#2563eb">🌐 Web</span> → Tavily real-time search<br>
+        <span style="font-size:0.82rem;color:#0891b2">📖 Wiki</span> → encyclopedic fallback<br>
+        <span style="font-size:0.82rem;color:#7c3aed">🧠 LLM</span> → model knowledge last
         </div>
         """,
         unsafe_allow_html=True,
@@ -616,7 +652,7 @@ if run_btn:
 
     st.markdown("---")
     st.markdown(
-        '<span style="font-family:Space Mono,monospace;font-size:0.7rem;letter-spacing:2px;color:#4a4a6a">AGENT TRACE</span>',
+        '<span style="font-family:Space Mono,monospace;font-size:0.7rem;letter-spacing:2px;color:#9ca3af">AGENT TRACE</span>',
         unsafe_allow_html=True,
     )
     status_box = st.container()
@@ -656,21 +692,21 @@ if run_btn:
     # ── Sources list ─────────────────────────
     if result["sources"]:
         st.markdown(
-            '<br><span style="font-family:Space Mono,monospace;font-size:0.68rem;letter-spacing:2px;color:#4a4a6a">SOURCES</span>',
+            '<br><span style="font-family:Space Mono,monospace;font-size:0.68rem;letter-spacing:2px;color:#9ca3af">SOURCES</span>',
             unsafe_allow_html=True,
         )
         for src in result["sources"]:
             if src.get("url"):
                 st.markdown(
                     f'<div class="card card-accent" style="padding:0.7rem 1rem;margin:0.4rem 0">'
-                    f'<a href="{src["url"]}" target="_blank" style="color:#60a5fa;text-decoration:none;font-size:0.85rem">'
+                    f'<a href="{src["url"]}" target="_blank" style="color:#2563eb;text-decoration:none;font-size:0.85rem">'
                     f'↗ {src["label"]}</a></div>',
                     unsafe_allow_html=True,
                 )
             else:
                 st.markdown(
                     f'<div class="card card-accent" style="padding:0.7rem 1rem;margin:0.4rem 0">'
-                    f'<span style="color:#a78bfa;font-size:0.85rem">{src["label"]}</span></div>',
+                    f'<span style="color:#4f46e5;font-size:0.85rem">{src["label"]}</span></div>',
                     unsafe_allow_html=True,
                 )
 
